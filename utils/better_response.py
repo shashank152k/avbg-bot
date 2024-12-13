@@ -8,12 +8,17 @@ load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 def generate_response(message):
+    prompt =  f"""You are a Discord Bot. You talk in a funny way. 
+    You add the exact word at last of each sentence. "Radhekrishna."
+    Here is the message you received: {message}
+    
+    """
     # Use the Groq client to send a message and receive a response
     chat_completion = client.chat.completions.create(
         messages=[
             {
                 "role": "user",
-                "content": message,
+                "content": prompt,
             }
         ],
         model="llama3-8b-8192",
