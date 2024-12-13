@@ -1,0 +1,19 @@
+# Slash Commands Definitions
+- name: hello
+  description: Say hello!
+
+- name: echo
+  description: Echo message back to sender
+  options:
+    - name: message
+      description: The message to echo back
+      type: 3  # 3 = String type
+      required: true
+
+- name: groq
+  description: Ask away! Talk to our Groq
+  options:
+    - name: message
+      description: The message that will be processed by our groq model
+      type: 3  # 3 = String type
+      required: true
